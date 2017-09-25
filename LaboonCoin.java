@@ -109,11 +109,11 @@ public class LaboonCoin {
     
     public boolean validHash(int difficulty, int hash) {
      // TODO - CHECK FOR VALID HASHES
-        int base = 0x00000000;
-        //Add 4*difficulty number of 1s in front, 4 stands for 4 bits
-        for(int i = 0; i < difficulty; i++){
-          base = (0xf0000000>>(4*i));
+        if(difficulty == 0){
+            return true;
         }
+        //Add 4*difficulty number of 1s in front, 4 stands for 4 bits
+        int base = 0xf0000000>>(4*(difficulty-1));
 
         //Check if the first difficulty number of bytes are 0
         if((hash&base)!=0){
