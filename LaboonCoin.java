@@ -109,7 +109,7 @@ public class LaboonCoin {
     
     public boolean validHash(int difficulty, int hash) {
      // TODO - CHECK FOR VALID HASHES
-        if(difficulty == 0){
+        if(difficulty <= 0){
             return true;
         }
         //Add 4*difficulty number of 1s in front, 4 stands for 4 bits
