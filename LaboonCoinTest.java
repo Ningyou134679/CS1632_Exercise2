@@ -78,19 +78,19 @@ public class LaboonCoinTest {
     //should return true
     @Test
     public void testValidHash2Empty(){
-        assertTrue(_l.validHash(2, _l.hash("")));
+        assertTrue(_l.validHash(2, 0x00989680));
     }
     //test the validity of hash value of "boo" under difficulty 3
     //shoudl return false
     @Test
     public void testValidHash3Boo(){
-        assertFalse(_l.validHash(3, _l.hash("boo")));
+        assertFalse(_l.validHash(3, 0x551fda32));
     }
     //test the validity of hash value of "boo" under difficulty 0
     //shoudl return false
     @Test
     public void testValidHash0Boo(){
-        assertTrue(_l.validHash(0, _l.hash("boo")));
+        assertTrue(_l.validHash(0, 0x551fda32));
     }
 
 }
